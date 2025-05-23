@@ -1,208 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Sofisticado</title>
-
-    <!-- Fonte sofisticada: Playfair Display -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* Paleta de cores */
-        :root {
-            --primary-color: #2C3E50;
-            --secondary-color: #18BC9C;
-            --text-color: #ECF0F1;
-            --hover-color: #1ABC9C;
-            --background-color: #f4f4f4;
-        }
-
-        /* Reset padrão */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Playfair Display', serif;
-            background-color: var(--background-color);
-            color: var(--primary-color);
-            line-height: 1.6;
-        }
-
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--primary-color);
-            padding: 1rem 2rem;
-            color: var(--text-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-
-        .menu {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .menu a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .menu a:hover {
-            color: var(--hover-color);
-        }
-
-        .search-bar input {
-            padding: 0.5rem;
-            border-radius: 4px;
-            border: none;
-            outline: none;
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Menu Hamburguer */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: var(--text-color);
-            margin: 4px 0;
-            transition: 0.4s;
-        }
-
-        /* Seções */
-        section {
-            padding: 60px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            font-size: 2rem;
-            color: var(--secondary-color);
-        }
-
-        p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        /* EM BREVE */
-        .coming-soon {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .coming-soon img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .coming-soon h1 {
-            margin-top: 20px;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: var(--primary-color);
-                margin-top: 10px;
-            }
-
-            .menu.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-        }
-    </style>
+    <title>Navbar Responsiva</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">MeuLogo</a>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">MinhaLogo</div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
 
-        <!-- Menu de Navegação -->
-        <div class="menu" id="menu">
-            <a href="#sobre">Sobre</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#em-breve">EM BREVE</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquisar...">
+                <button type="submit">🔍</button>
+            </div>
+
+            <div class="hamburger" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
+    </header>
 
-        <!-- Barra de Pesquisa -->
-        <div class="search-bar">
-            <input type="text" placeholder="Pesquisar...">
-        </div>
+    <main class="content">
+        <div class="coming-soon">
+            <img src="https://via.placeholder.com/600x400?text=EM+BREVE!" alt="Em Breve">
+            </div>
 
-        <!-- Botão Hamburguer -->
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </nav>
+        <section id="home">
+            <h2>Bem-vindo à Nossa Página!</h2>
+            <p>Este é o conteúdo principal da sua página. Role para baixo para ver mais!</p>
+        </section>
 
-    <!-- Seção Sobre -->
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec est at libero luctus bibendum. 
-           Aenean vel nibh vel metus vulputate tristique.</p>
-        <p>Proin porttitor, nulla nec egestas congue, lectus justo pulvinar augue, sed cursus odio urna at orci.</p>
-    </section>
+        <section id="servicos">
+            <h2>Nossos Serviços</h2>
+            <p>Detalhes sobre os serviços que oferecemos.</p>
+        </section>
 
-    <!-- Seção Serviços -->
-    <section id="servicos">
-        <h2>Serviços</h2>
-        <p>✔ Desenvolvimento Web</p>
-        <p>✔ Design Responsivo</p>
-        <p>✔ Consultoria de Marketing Digital</p>
-    </section>
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Conheça um pouco mais sobre a nossa empresa.</p>
+        </section>
 
-    <!-- Seção EM BREVE -->
-    <section id="em-breve" class="coming-soon">
-        <img src="https://via.placeholder.com/600x300?text=EM+BREVE!" alt="EM BREVE!">
-        <h1>EM BREVE!</h1>
-    </section>
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <p>Informações para contato.</p>
+        </section>
+    </main>
 
-    <!-- Script para Menu Hamburguer -->
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const menu = document.getElementById('menu');
-
-        hamburger.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
