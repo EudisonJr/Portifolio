@@ -1,0 +1,265 @@
+/* Paleta de Cores */
+/*
+  --primary-color: #3498db;   Azul Primário
+  --secondary-color: #2c3e50; Cinza Escuro (Texto/Fundo Secundário)
+  --accent-color: #e74c3c;    Vermelho (Destaque/Ações)
+  --light-color: #ecf0f1;     Cinza Claro (Fundo/Texto Claro)
+  --text-color: #333;         Preto Suave
+  --shadow-color: rgba(0, 0, 0, 0.2);
+*/
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --text-color: #333;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--light-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Estilos da Navbar */
+.navbar {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    position: sticky; /* Fixa a navbar no topo */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Espaçamento interno para as bordas */
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--light-color);
+}
+
+/* Menu de Navegação */
+.nav-menu ul {
+    list-style: none;
+    display: flex; /* Exibe os itens lado a lado */
+}
+
+.nav-menu ul li {
+    margin-left: 25px; /* Espaçamento entre os itens do menu */
+}
+
+.nav-menu ul li a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative; /* Para o efeito de sublinhado */
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu ul li a:hover::after {
+    width: 100%;
+}
+
+/* Barra de Pesquisa */
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--light-color);
+    overflow: hidden; /* Garante que o input e o botão fiquem dentro do border-radius */
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px 15px;
+    outline: none;
+    font-size: 1rem;
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.search-bar button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: var(--light-color);
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Menu Hambúrguer (inicialmente oculto) */
+.hamburger {
+    display: none; /* Oculto por padrão em telas maiores */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-color);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para o Corpo da Página */
+.content {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.content section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.content h2 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+/* Estilos da Imagem "EM BREVE!" */
+.coming-soon {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.coming-soon img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+        justify-content: center; /* Centraliza os itens quando quebra */
+    }
+
+    .logo {
+        width: 100%; /* Ocupa toda a largura */
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .nav-menu {
+        width: 100%; /* Ocupa toda a largura */
+        order: 3; /* Coloca o menu abaixo do logo e da pesquisa */
+        margin-top: 15px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column; /* Exibe os itens verticalmente */
+        align-items: center;
+        display: none; /* Oculta o menu por padrão em telas menores */
+    }
+
+    .nav-menu.active ul {
+        display: flex; /* Exibe o menu quando a classe 'active' está presente */
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0; /* Espaçamento vertical entre os itens do menu */
+    }
+
+    .search-bar {
+        width: 80%; /* Ocupa mais espaço na largura */
+        margin-bottom: 15px;
+        order: 2; /* Coloca a pesquisa entre o logo e o menu (se não estiver ativado) */
+    }
+
+    .hamburger {
+        display: flex; /* Exibe o menu hambúrguer */
+        order: 1; /* Coloca o hambúrguer no início */
+        margin-left: auto; /* Empurra para a direita */
+    }
+
+    /* Animação do Hambúrguer */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .search-bar {
+        width: 90%; /* Ocupa ainda mais espaço */
+    }
+
+    .search-bar input {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .search-bar button {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+}
