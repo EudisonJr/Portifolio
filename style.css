@@ -41,7 +41,17 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+    /* Adicionado para a animação de crescimento */
+    transform: scaleY(1); /* Estado inicial: sem escala */
+    transform-origin: top; /* O crescimento acontece a partir do topo */
+    transition: transform 0.3s ease-out; /* Transição suave para a animação */
 }
+
+/* Animação de crescimento da navbar ao passar o mouse */
+.navbar:hover {
+    transform: scaleY(1.05); /* Cresce 5% na vertical */
+}
+
 
 .navbar-container {
     max-width: 1200px;
