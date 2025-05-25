@@ -1,3 +1,9 @@
+ @font-face {
+    font-family: 'Minecraftia';
+    src: url('fonts/minecraftia.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;}
+
 /* Variáveis CSS para a paleta de cores e transições */
 :root {
     --primary-color: #007bff;     /* Azul primário */
