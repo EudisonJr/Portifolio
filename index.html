@@ -1,58 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar Oculta</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="hover-zone"></div>
-
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="logo">MinhaLogo</a>
-
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#">Seu Logo</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
             <div class="search-bar">
-                <input type="text" placeholder="Buscar...">
-                <button>🔍</button>
-            </div>
-
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-
-            <div class="nav-menu" id="nav-menu">
-                <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
+                <input type="text" placeholder="Pesquisar...">
+                <button type="submit">🔍</button>
             </div>
         </div>
     </nav>
 
-    <div class="content">
-        <section>
-            <h2>Bem-vindo!</h2>
-            <p>Este é um exemplo de navbar que aparece ao passar o mouse no topo da página.</p>
-        </section>
-    </div>
+    <main class="content">
+        <h1>Bem-vindo ao Meu Portfólio!</h1>
+        <p>Aqui você encontrará uma amostra dos meus trabalhos e projetos.</p>
+        <div class="placeholder-image">
+            <img src="em_breve.png" alt="Em Breve!" aria-label="Conteúdo em breve">
+        </div>
+        <p>Estou trabalhando duro para trazer mais conteúdo incrível para você.</p>
+    </main>
 
-    <script>
-        // Script do menu hambúrguer para telas pequenas
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
