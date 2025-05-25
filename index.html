@@ -1,89 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar Responsiva</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    
+
+    <!-- Hover zone invisível para ativar a navbar -->
     <div class="hover-zone"></div>
-    <header class="navbar">
+
+    <!-- Navbar -->
+    <nav class="navbar">
         <div class="navbar-container">
-            <a href="#" class="logo">MeuLogo</a>
-            <nav class="nav-menu">
-                <ul class="nav-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
+            <a href="#" class="logo">MinhaLogo</a>
+            
             <div class="search-bar">
-                <input type="text" placeholder="Pesquisar...">
-                <button type="submit">🔍</button>
+                <input type="text" placeholder="Buscar...">
+                <button>🔍</button>
             </div>
-            <div class="hamburger" id="hamburger-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+
+            <div class="hamburger" id="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <header class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="logo">MeuLogo</a>
-
-            <nav class="nav-menu">
-                <ul class="nav-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-
-            <div class="search-bar">
-                <input type="text" placeholder="Pesquisar...">
-                <button type="submit">🔍</button>
-            </div>
-
-            <div class="hamburger" id="hamburger-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </header>
-
-    <main class="content">
-        <div class="coming-soon">
-            <img src="https://via.placeholder.com/600x400?text=EM+BREVE!" alt="Em Breve">
-            </div>
-
-        <section id="home">
-            <h2>Bem-vindo à Nossa Página!</h2>
-            <p>Este é o conteúdo principal da sua página. Role para baixo para ver mais!</p>
+    <!-- Conteúdo da página -->
+    <div class="content">
+        <section>
+            <h2>Bem-vindo!</h2>
+            <p>Este é um exemplo de navbar responsiva que aparece ao passar o mouse no topo da página.</p>
         </section>
 
-        <section id="servicos">
-            <h2>Nossos Serviços</h2>
-            <p>Detalhes sobre os serviços que oferecemos.</p>
+        <section>
+            <h2>Sobre nós</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac venenatis elit.</p>
         </section>
 
-        <section id="sobre">
-            <h2>Sobre Nós</h2>
-            <p>Conheça um pouco mais sobre a nossa empresa.</p>
+        <section>
+            <h2>Serviços</h2>
+            <p>Oferecemos uma ampla gama de serviços para atender às suas necessidades.</p>
         </section>
+    </div>
 
-        <section id="contato">
-            <h2>Entre em Contato</h2>
-            <p>Informações para contato.</p>
-        </section>
-    </main>
+    <script>
+        // Script para o menu hambúrguer funcionar no mobile
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
 
-    <script src="script.js"></script>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
 </body>
 </html>
