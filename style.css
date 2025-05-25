@@ -1,13 +1,4 @@
 /* Paleta de Cores */
-/*
-  --primary-color: #3498db;   Azul Primário
-  --secondary-color: #2c3e50; Cinza Escuro (Texto/Fundo Secundário)
-  --accent-color: #e74c3c;    Vermelho (Destaque/Ações)
-  --light-color: #ecf0f1;     Cinza Claro (Fundo/Texto Claro)
-  --text-color: #333;         Preto Suave
-  --shadow-color: rgba(0, 0, 0, 0.2);
-*/
-
 :root {
     --primary-color: #3498db;
     --secondary-color: #2c3e50;
@@ -31,27 +22,37 @@ body {
     line-height: 1.6;
 }
 
+/* Hover Zone para ativar a navbar */
+.hover-zone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 20px; /* Altura da área sensível */
+    width: 100%;
+    z-index: 1001;
+}
+
 /* Estilos da Navbar */
 .navbar {
     background-color: var(--secondary-color);
     color: var(--light-color);
     padding: 15px 0;
     box-shadow: 0 2px 5px var(--shadow-color);
-    position: sticky; /* Fixa a navbar no topo */
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
-    /* Adicionado para a animação de crescimento */
-    transform: scaleY(1); /* Estado inicial: sem escala */
-    transform-origin: top; /* O crescimento acontece a partir do topo */
-    transition: transform 0.3s ease-out; /* Transição suave para a animação */
+    z-index: 1000;
+
+    transform: translateY(-100%); /* Esconde acima da tela */
+    transition: transform 0.3s ease-out;
 }
 
-/* Animação de crescimento da navbar ao passar o mouse */
+/* Mostra a navbar quando passar o mouse */
+.hover-zone:hover + .navbar,
 .navbar:hover {
-    transform: scaleY(1.05); /* Cresce 5% na vertical */
+    transform: translateY(0);
 }
-
 
 .navbar-container {
     max-width: 1200px;
@@ -59,10 +60,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Espaçamento interno para as bordas */
+    padding: 0 20px;
 }
 
-/* Logo */
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
@@ -75,14 +75,13 @@ body {
     color: var(--light-color);
 }
 
-/* Menu de Navegação */
 .nav-menu ul {
     list-style: none;
-    display: flex; /* Exibe os itens lado a lado */
+    display: flex;
 }
 
 .nav-menu ul li {
-    margin-left: 25px; /* Espaçamento entre os itens do menu */
+    margin-left: 25px;
 }
 
 .nav-menu ul li a {
@@ -90,7 +89,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     padding: 5px 0;
-    position: relative; /* Para o efeito de sublinhado */
+    position: relative;
     transition: color 0.3s ease;
 }
 
@@ -113,13 +112,12 @@ body {
     width: 100%;
 }
 
-/* Barra de Pesquisa */
 .search-bar {
     display: flex;
     align-items: center;
     border-radius: 20px;
     background-color: var(--light-color);
-    overflow: hidden; /* Garante que o input e o botão fiquem dentro do border-radius */
+    overflow: hidden;
 }
 
 .search-bar input {
@@ -145,9 +143,8 @@ body {
     background-color: var(--accent-color);
 }
 
-/* Menu Hambúrguer (inicialmente oculto) */
 .hamburger {
-    display: none; /* Oculto por padrão em telas maiores */
+    display: none;
     flex-direction: column;
     cursor: pointer;
 }
@@ -160,7 +157,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Estilos para o Corpo da Página */
+/* Estilos do Corpo */
 .content {
     padding: 40px 20px;
     max-width: 1200px;
@@ -182,7 +179,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Estilos da Imagem "EM BREVE!" */
 .coming-soon {
     text-align: center;
     margin-bottom: 40px;
@@ -195,52 +191,51 @@ body {
     box-shadow: 0 4px 8px var(--shadow-color);
 }
 
-/* Media Queries para Responsividade */
+/* Media Queries */
 @media (max-width: 768px) {
     .navbar-container {
-        flex-wrap: wrap; /* Permite que os itens quebrem a linha */
-        justify-content: center; /* Centraliza os itens quando quebra */
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .logo {
-        width: 100%; /* Ocupa toda a largura */
+        width: 100%;
         text-align: center;
         margin-bottom: 15px;
     }
 
     .nav-menu {
-        width: 100%; /* Ocupa toda a largura */
-        order: 3; /* Coloca o menu abaixo do logo e da pesquisa */
+        width: 100%;
+        order: 3;
         margin-top: 15px;
     }
 
     .nav-menu ul {
-        flex-direction: column; /* Exibe os itens verticalmente */
+        flex-direction: column;
         align-items: center;
-        display: none; /* Oculta o menu por padrão em telas menores */
+        display: none;
     }
 
     .nav-menu.active ul {
-        display: flex; /* Exibe o menu quando a classe 'active' está presente */
+        display: flex;
     }
 
     .nav-menu ul li {
-        margin: 10px 0; /* Espaçamento vertical entre os itens do menu */
+        margin: 10px 0;
     }
 
     .search-bar {
-        width: 80%; /* Ocupa mais espaço na largura */
+        width: 80%;
         margin-bottom: 15px;
-        order: 2; /* Coloca a pesquisa entre o logo e o menu (se não estiver ativado) */
+        order: 2;
     }
 
     .hamburger {
-        display: flex; /* Exibe o menu hambúrguer */
-        order: 1; /* Coloca o hambúrguer no início */
-        margin-left: auto; /* Empurra para a direita */
+        display: flex;
+        order: 1;
+        margin-left: auto;
     }
 
-    /* Animação do Hambúrguer */
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
@@ -260,7 +255,7 @@ body {
     }
 
     .search-bar {
-        width: 90%; /* Ocupa ainda mais espaço */
+        width: 90%;
     }
 
     .search-bar input {
