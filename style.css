@@ -1,0 +1,291 @@
+
+/* ESTILO GERAL */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*ficam todos na mesma borda*/
+    font-family: "Pixelify Sans", sans-serif;/*FONTE GOOGLE*/
+}
+  
+
+
+body{
+    background-color: black;
+    height: 50vh;
+}
+
+.interface{
+    
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.flex{
+    display: flex;
+}
+.portifolio-contato button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #00ff08;
+    
+    border: 0;/*removendo as bordas*/
+    border-radius: 30px;/*arredondando as bordas*/
+    cursor: pointer;/*efeito de dedo ao passar o cursor*/
+    transition: .2s;
+}
+/*Chama a classe interface*/
+
+h2.titulo {
+    color: white;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span {
+    color: #00ff08;
+}
+/* ESTILO DO CABEÇALHO */
+
+.header{
+    padding: 40px 4%;
+}
+
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}/*Proucura os elementos da classe interface dentro da tag header*/
+
+
+
+/*############################################*/
+
+/*quando passar o mouse por cima, acontecerá determinadas ações*/
+header a{
+    color: rgb(104, 103, 103);/*todas as cores do header ficam brancas*/
+    text-decoration: none; /* remove o sublinhado */
+    display: inline-block;/*##IMPORTANTE## para atribuir caracteristicas de block*/
+}
+header a:hover{
+    color: floralwhite;/* transforma o texto em branco */
+    transform: scale(1.05);/* da um efeito de aumento de fonte para todos os links do header*/
+    transition: .2s;/* deixando a trasição suave */
+}
+
+.portifolio-contato button:hover{
+    box-shadow: 0px 0px 8px #00ff08a4;/* efeito de sombra */
+    transform: scale(1.05);
+     
+}
+
+
+
+/*############################################*/
+
+
+
+
+
+
+header nav ul{
+    list-style-type: none;/*remove todas as bolinhas antes do UL*/
+    
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+
+
+.logo img{
+    margin-top: 25px;/*espaçamento da logo para o topo*/
+}
+
+/* ESTILO TOPO DO SITE */
+section.topo-do-site{
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site .txt-topo-do-site h1 {
+    color: white;
+    font-size: 45px;
+    line-height: 40px;
+}
+.topo-do-site .txt-topo-do-site h1 span{
+    color: #00ff08;
+}
+
+.topo-do-site .txt-topo-do-site p {
+    color: white;
+    margin: 40px 0;
+}
+
+.topo-do-site .img-topo-site {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes flutuar {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+/* Estilo das especialidades */
+
+section.especialidades{
+    padding: 40px 4%;
+}
+
+section .especialidades .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.especialidades .especialidades-box{
+    flex: 1; /* faz com que cada box ocupe o mesmo espaço */
+    color: white;
+    padding: 40px;
+    margin-top: 45px;
+    border-radius: 20px;
+    transition: .2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #ffffff78;
+}
+
+.especialidades .especialidades-box i{
+    font-size: 70px;
+    color: #00ff08;
+    
+}
+.especialidades .especialidades-box h3{
+    font-size: 28px;
+    margin: 15 0;
+}
+/* Estilo do Sobre */
+
+section.sobre{
+    padding: 60px 4%;
+}
+
+section.sobre .flex{
+    
+    align-items: center;
+}
+
+.sobre .txt-sobre{
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 span{
+    color: #00ff08;
+    display: block;
+    
+}
+
+@keyframes pisca{/* Animação de digitação */
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+.sobre .txt-sobre h2{
+    font-size: 50px;
+    line-height: 40px;
+    margin-bottom: 30px;
+
+}
+.sobre .txt-sobre h2 span::after {/* Animação de digitação */
+    color: #fff;
+    content: '|';
+    opacity: 1;
+    animation: pisca .7s infinite;
+}
+
+.sobre .img-sobre {
+    margin-left: auto;
+    margin-right: 0px; /* Ajuste se quiser afastar mais da borda direita */
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+    
+}
+.aos .sobre .txt-sobre p{
+    display: inline-block;
+    float: left;
+    width: 33.3333%;
+    height: 300px;
+    padding: 20px;
+}
+
+
+
+.sobre .txt-sobre .portifolio-social button{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    background-color: #00ff08;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.sobre .txt-sobre .portifolio-social button:hover{
+    transform: scale(1.15);
+    transition: .3s;
+    box-shadow: 0px 0px 8px #00ff08a4;/* efeito de sombra */
+}
+
+.cursor {
+  animation: pisca 0.7s infinite;
+  color: #00ff08;
+}
+
+#digitando {
+  display: inline-block;
+  min-height: 80px; /* ajusta conforme o tamanho do seu texto */
+  white-space: nowrap; /* impede que quebre linha e empurre pra baixo */
+  overflow: hidden;    /* evita scroll horizontal */
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Fica por trás de tudo */
+}
+.interface, .sobre, .especialidades, header, main {
+  position: relative;
+  z-index: 1;
+}
