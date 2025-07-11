@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+  <!-- Ícones Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Animações AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Estilo -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Portfólio</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div> <!-- Fundo animado -->
+
+  <header>
+    <div class="interface">
+      <div class="logo">
+        <a href="#">
+          <img src="images/ChatGPT_Image_10_de_jul._de_2025__22_59_04-removebg-preview-removebg-preview.png" alt="Logo do Portfólio">
+        </a>
+      </div>
+      <nav class="menu-desktop">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+        </ul>
+      </nav>
+      <div class="portifolio-contato">
+        <a href="#contato"><button>Contato</button></a>
+      </div>
+     <!-- Botão para abrir o menu -->
+
+</div>
+<!-- Menu Desktop -->
+      
+
+      <!-- Botão Contato -->
+      
+
+      <!-- Botão de abrir menu mobile -->
+      <div id="btn-abrir" class="btn-abrir-menu">
+        <i class="bi bi-list"></i>
+      </div>
+    </div>
+
+<!-- Menu Mobile -->
+<div id="menu-mobile" class="menu-mobile" aria-hidden="true">
+  <div class="btn-fechar" role="button" tabindex="0" aria-label="Fechar menu">&times;</div>
+  <nav>
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Portfólio</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div id="overlay-menu" class="overlay-menu"></div>
+
+<script>
+  const btnAbrir = document.getElementById("btn-abrir");
+  const menuMobile = document.getElementById("menu-mobile");
+  const overlay = document.getElementById("overlay-menu");
+  const btnFechar = menuMobile.querySelector(".btn-fechar");
+
+  function toggleMobileMenu() {
+    const isMenuOpen = menuMobile.classList.toggle("active");
+    overlay.classList.toggle("active", isMenuOpen);
+
+    btnAbrir.setAttribute("aria-expanded", isMenuOpen);
+    menuMobile.setAttribute("aria-hidden", !isMenuOpen);
+
+    if (isMenuOpen) {
+      menuMobile.querySelector("a").focus();
+    } else {
+      btnAbrir.focus();
+    }
+  }
+
+  btnAbrir.addEventListener("click", toggleMobileMenu);
+  btnFechar.addEventListener("click", toggleMobileMenu);
+  overlay.addEventListener("click", toggleMobileMenu);
+
+  // Fecha o menu ao apertar ESC
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuMobile.classList.contains("active")) {
+      toggleMobileMenu();
+    }
+  });
+
+  // Fecha menu ao clicar em qualquer link
+  menuMobile.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (menuMobile.classList.contains("active")) {
+        toggleMobileMenu();
+      }
+    });
+  });
+</script>
+
+  </header>
+
+  <main>
+    <section id="inicio" class="topo-do-site">
+      <div class="interface">
+        <div class="flex">
+          <div class="txt-topo-do-site">
+            <h1>DESENVOLVA DE FORMA SIMPLES E EFICIENTE<span>.</span></h1>
+            <p>Desenvolvimento com criatividade e facilidade. Um design único, impactante e intuitivo que agrada olhos de jovens e adultos. Estou ONLINE para o Desenvolvimento de ponta.</p>
+            <div class="portifolio-contato">
+              <a href="#contato"><button>Entre em contato</button></a>
+            </div>
+          </div>
+          <div class="img-topo-site">
+            <img src="images/cruz-vermelha.png" height="90%" width="90%" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="especialidades" class="especialidades">
+      <div class="interface">
+        <h2 class="titulo">MINHAS <span>ESPECIALIDADES</span>.</h2>
+        <div class="flex">
+          <div class="especialidades-box">
+            <i class="bi bi-joystick"></i>
+            <h3>GameDev</h3>
+            <p>1 ano e meio de desenvolvimento de jogos usando a Engine GMS (Game Maker Studio) com a linguagem GML.</p>
+          </div>
+          <div class="especialidades-box">
+            <i class="bi bi-braces"></i>
+            <h3>PythonDev</h3>
+            <p>Mais de um ano com Python, desenvolvendo projetos com várias funcionalidades e interfaces.</p>
+          </div>
+          <div class="especialidades-box">
+            <i class="bi bi-pc"></i>
+            <h3>Administrador de Redes</h3>
+            <p>Mais de um ano estudando redes de computadores, tanto na teoria quanto na prática.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+      <div class="interface">
+        <div class="flex">
+          <div class="img-sobre">
+            <img src="images/foto-retrato.png" width="80%" height="100%" alt="">
+          </div>
+          <div class="txt-sobre">
+            <h2 id="digitando">MUITO PRAZER, <span>ME CHAMO EUDISON</span></h2>
+            <p data-aos="flip-left" data-aos-delay="300" data-aos-duration="1200">Tenho 17 anos e estudo no IFMA - Campus Açailândia, cursando o 2º ano de Informática. Conheci programação antes de ingressar e tenho afinidade com Python, Java e C.</p>
+            <p data-aos="flip-right" data-aos-delay="300" data-aos-duration="1200">Estou envolvido com 3 projetos e me preparando para mais. Tudo que aprendo na escola levo comigo como programador.</p>
+            <div class="portifolio-social">
+              <a href="https://www.instagram.com/eudisonjunior" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
+              <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
+              <a href="https://github.com/EudisonJr" target="_blank"><button><i class="bi bi-github"></i></button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="portifolio">
+      <div class="interface">
+        <h2 class="titulo" data-aos="fade-up">MEU <span>PORTFÓLIO</span>.</h2>
+        <div class="flex">
+          <div class="img-port" style="background-image: url(images/english.png);"><div class="overlay">Projeto 1</div></div>
+          <div class="img-port" style="background-image: url(images/english.png);"><div class="overlay">Projeto 2</div></div>
+          <div class="img-port" style="background-image: url(images/english.png);"><div class="overlay">Projeto 3</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="formulario">
+      <div class="interface">
+        <h2 class="titulo">FALA <span>COMIGO</span></h2>
+        <form>
+          <input type="text" placeholder="Seu nome completo:" required>
+          <input type="email" placeholder="Seu email:" required>
+          <input type="tel" placeholder="Seu telefone:">
+          <textarea placeholder="Sua mensagem:" required></textarea>
+          <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="interface">
+      <div class="line-footer">
+        <div class="flex">
+          <div class="logo-footer">
+            <img src="images/ChatGPT_Image_10_de_jul._de_2025__22_59_04-removebg-preview-removebg-preview.png" alt="Logo do portfólio">
+          </div>
+          <div class="portifolio-social">
+            <a href="https://www.instagram.com/eudisonjunior" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
+              <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
+              <a href="https://github.com/EudisonJr" target="_blank"><button><i class="bi bi-github"></i></button></a>
+          </div>
+        </div>
+      </div>
+      <div class="line-footer borda">
+        <p><i class="bi bi-envelope-fill"></i> <a href="mailto:eudisonjunior@acad.ifma.edu.br">eudisonjunior@acad.ifma.edu.br</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <script>
+    const elemento = document.getElementById("digitando");
+    const texto1 = "MUITO PRAZER, ";
+    const texto2 = "ME CHAMO EUDISON JUNIOR";
+    let i = 0, j = 0;
+    elemento.innerHTML = "";
+
+    function digitarParte1() {
+      if (i < texto1.length) {
+        elemento.innerHTML = texto1.substring(0, i + 1);
+        i++;
+        setTimeout(digitarParte1, 80);
+      } else {
+        const span = document.createElement("span");
+        span.style.color = "#ee1212";
+        elemento.appendChild(span);
+        digitarParte2(span);
+      }
+    }
+
+    function digitarParte2(span) {
+      if (j < texto2.length) {
+        span.textContent += texto2.charAt(j);
+        j++;
+        setTimeout(() => digitarParte2(span), 80);
+      }
+    }
+
+    function iniciarQuandoVisivel() {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            digitarParte1();
+            obs.disconnect();
+          }
+        });
+      });
+      observer.observe(elemento);
+    }
+
+    iniciarQuandoVisivel();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btnAbrir = document.getElementById("btn-abrir");
+      const menuMobile = document.getElementById("menu-mobile");
+      const overlay = document.getElementById("overlay-menu");
+      const btnFechar = menuMobile.querySelector(".btn-fechar");
+
+      btnAbrir.addEventListener("click", () => {
+        menuMobile.style.display = "flex";
+        overlay.style.display = "block";
+      });
+
+      btnFechar.addEventListener("click", () => {
+        menuMobile.style.display = "none";
+        overlay.style.display = "none";
+      });
+
+      overlay.addEventListener("click", () => {
+        menuMobile.style.display = "none";
+        overlay.style.display = "none";
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  
+</body>
+</html>
