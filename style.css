@@ -24,19 +24,13 @@ body{
 
 /* Centralizar logo no header */
 .logo {
-  width: 100%;
   display: flex;
-  justify-content: center;
-  text-align: center;
+  /* removendo width 100%, para ocupar só o tamanho necessário */
   margin-top: 20px;
-  margin-left: 0; /* remove margem esquerda anterior */
+  margin-left: 20px; /* ou ajuste para centralizar */
+  flex-shrink: 0; /* evitar que encolha */
 }
 
-.logo img {
-  margin-top: 0;
-  max-width: 120px; /* ajuste conforme quiser */
-  height: auto;
-}
 
 .portifolio-contato button{
     padding: 10px 40px;
@@ -67,11 +61,11 @@ h2.titulo span {
     padding: 40px 4%;
 }
 
-header > .interface{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}/*Proucura os elementos da classe interface dentro da tag header*/
+header > .interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ✅ distribui os três elementos */
+}
 
 /*quando passar o mouse por cima, acontecerá determinadas ações*/
 header a{
@@ -98,7 +92,8 @@ header nav ul{
 
 header nav ul li{
     display: inline-block;
-    padding: 0 40px;
+    
+    font-size: 20px;
 }
 
 /* Estilo topo do site */
@@ -527,4 +522,204 @@ footer .line-footer > .flex {
   justify-content: center !important;
   gap: 40px; /* espaço entre logo e ícones */
   align-items: center;
+}
+.btn-abrir-menu {
+  display: none;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background-color: #111;
+  z-index: 1000;
+  padding: 40px 20px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+  box-shadow: -10px 0 20px #00000088;
+  transition: 0.3s;
+}
+
+.menu-mobile nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.menu-mobile nav ul li a {
+  color: #fff;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.menu-mobile .btn-fechar {
+  text-align: right;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.overlay-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #00000080;
+  z-index: 999;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 1020px) {
+  .menu-desktop,
+  .portifolio-contato {
+    display: none;
+  }
+
+
+  .logo {
+    width: auto;                /* largura natural */
+    justify-content: flex-start; /* alinha à esquerda */
+    margin-left: 18;             /* remove margem */
+    text-align: left;
+
+  }
+
+  .btn-abrir-menu {
+    display: block;
+    
+    
+    margin-right: 40px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+  }
+}
+
+.menu-desktop ul {
+  display: flex;
+  align-items: center;
+  
+}
+
+header nav ul li {
+  margin: 0 15px;
+  padding: 0;
+}
+
+.menu-desktop {
+  flex: 1;           /* ocupa o espaço entre logo e botão */
+  text-align: center; /* centraliza o conteúdo dentro */
+}
+.menu-desktop ul {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-desktop ul li {
+  margin: 0 15px;
+}
+.portifolio-contato {
+  flex-shrink: 0; /* não deixa encolher */
+}
+
+/* Esconde o menu mobile e o overlay inicialmente */
+.menu-mobile,
+.overlay-menu {
+  display: none;
+}
+
+/* Adiciona uma classe para mostrar o menu quando ativo */
+.menu-mobile.active {
+  display: flex;
+}
+
+.overlay-menu.active {
+  display: block;
+}
+
+.menu-mobile {
+  right: -70%;
+  transition: right 0.3s ease-in-out;
+  /* outras regras */
+}
+
+.menu-mobile.active {
+  right: 0;
+  display: flex; /* garantir que fica visível */
+}
+
+/* Overlay: escurece a tela atrás do menu */
+.overlay-menu {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.733);
+  opacity: 0;
+  pointer-events: none; /* impede interação quando oculto */
+  transition: opacity 0.3s ease-in-out;
+  z-index: 999;
+}
+
+
+.overlay-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.btn-abrir-menu {
+  cursor: pointer;
+  font-size: 40px;
+  color: white;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  z-index: 1001;
+}
+
+.menu-mobile {
+  display: none;
+  position: fixed;
+  top: 0; right: 0;
+  width: 70%;
+  height: 100vh;
+  background-color: #111;
+  z-index: 1000;
+  padding: 40px 20px;
+  flex-direction: column;
+  gap: 40px;
+  box-shadow: -10px 0 20px rgba(0,0,0,0.6);
+}
+
+.menu-mobile.active {
+  right: 0;
+}
+
+.overlay-menu {
+  position: relative;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.overlay-menu.active {
+  opacity: 1;
+  pointer-events: auto;
 }
